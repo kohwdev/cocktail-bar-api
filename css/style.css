@@ -11,6 +11,7 @@
 /* LAYOUT
 /*******************************************/
 
+
 .hidden {
   display: none;
 }
@@ -23,7 +24,16 @@
 
 
 
+/*Typography*/
+.card-title{
+  font-weight: 600;
+  font-size: 2em;
+}
 
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
+.instructions{
+  color: gray;
+}
+
+.fa-caret-right{
+  color: gray;
+}

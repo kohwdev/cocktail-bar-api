@@ -82,7 +82,7 @@ function getFetch(){
         console.log(data.drinks[0])
         let myDrink = data.drinks[0];
         document.querySelector('.card-title').innerText = myDrink.strDrink
-        document.querySelector('.img-fluid').src =
+        document.querySelector('.card-img-top').src =
           myDrink.strDrinkThumb;
         document.querySelector('.instructions').innerText = myDrink.strInstructions
         let count = 1;
@@ -101,12 +101,18 @@ function getFetch(){
           ingredients.push(`${measure} ${ingredient}`)
            
       }}
-        document.querySelector('.list-group-flush').innerHTML = ingredients.map(ingredient => `<li class="list-group-item">${ingredient}</li>`).join('')
+        document.querySelector(".list-group-flush").innerHTML = ingredients
+          .map(
+            (ingredient) =>
+              `<li class="list-group-item"><i class="fa-solid fa-caret-right"></i>&nbsp&nbsp${ingredient}</li>`
+          )
+          .join("");
      })
       document
         .querySelector('#card-view')
         .classList.remove("hidden")
-
+      document.querySelector('.cocktail-logo').classList.add('hidden')
+      
         .catch((err) => {
           console.log(`error ${err}`);
         });
